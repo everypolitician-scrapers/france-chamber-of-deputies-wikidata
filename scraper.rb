@@ -4,6 +4,6 @@
 require 'wikidata/fetcher'
 
 names = EveryPolitician::Wikidata.morph_wikinames(source: 'tmtmtmtm/france-national-assembly-wikipedia', column: 'wikiname')
-names.each_slice(50) do |sliced|
+names.shuffle.each_slice(50) do |sliced|
   EveryPolitician::Wikidata.scrape_wikidata(names: { fr: sliced })
 end
