@@ -15,5 +15,4 @@ names = EveryPolitician::Wikidata.wikipedia_xpath(
   before: '//span[@id="Notes_et_r.C3.A9f.C3.A9rences"]',
   xpath: '//table//tr//td[1]//a[not(@class="new")]/@title',
 ) 
-
-EveryPolitician::Wikidata.scrape_wikidata(names: { fr: names })
+EveryPolitician::Wikidata.scrape_wikidata(names: { fr: names }, batch_size: 100)
