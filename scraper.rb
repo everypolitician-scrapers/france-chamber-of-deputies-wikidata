@@ -16,6 +16,7 @@ require 'wikidata/fetcher'
   # xpath: '//table//tr//td[1]//a[not(@class="new")]/@title',
 # ) 
 
-names = WikiData::Category.new( 'Catégorie:Député de la XIVe législature de la Ve République', 'fr').member_titles
+names = WikiData::Category.new( 'Catégorie:Député de la XIVe législature de la Ve République', 'fr').member_titles |
+        WikiData::Category.new( 'Catégorie:Député de la XIIIe législature de la Ve République', 'fr').member_titles
 
 EveryPolitician::Wikidata.scrape_wikidata(names: { fr: names }, batch_size: 100)
