@@ -19,4 +19,4 @@ require 'wikidata/fetcher'
 names = WikiData::Category.new( 'Catégorie:Député de la XIVe législature de la Ve République', 'fr').member_titles |
         WikiData::Category.new( 'Catégorie:Député de la XIIIe législature de la Ve République', 'fr').member_titles
 
-EveryPolitician::Wikidata.scrape_wikidata(names: { fr: names }, batch_size: 100)
+EveryPolitician::Wikidata.scrape_wikidata(names: { fr: names }, batch_size: 50)
