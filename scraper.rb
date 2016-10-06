@@ -20,4 +20,4 @@ names = WikiData::Category.new( 'Catégorie:Député de la XIVe législature de 
         WikiData::Category.new( 'Catégorie:Député de la XIIIe législature de la Ve République', 'fr').member_titles |
         WikiData::Category.new( 'Catégorie:Député de la XIIe législature de la Ve République', 'fr').member_titles
 
-EveryPolitician::Wikidata.scrape_wikidata(names: { fr: names }, batch_size: 50)
+EveryPolitician::Wikidata.scrape_wikidata(names: { fr: names })
