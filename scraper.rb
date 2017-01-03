@@ -11,4 +11,4 @@ names['12'] = WikiData::Category.new( 'Catégorie:Député de la XIIe législatu
 wanted = names.values.inject(:|)
 puts "Fetching #{wanted.count}"
 
-# EveryPolitician::Wikidata.scrape_wikidata(names: { fr: wanted })
+EveryPolitician::Wikidata.scrape_wikidata(names: { fr: wanted }, batch_size: 250)
