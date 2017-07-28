@@ -4,6 +4,7 @@
 require 'wikidata/fetcher'
 
 names = {}
+names['15'] = WikiData::Category.new( 'Catégorie:Député de la XVe législature de la Ve République', 'fr').member_titles
 names['14'] = WikiData::Category.new( 'Catégorie:Député de la XIVe législature de la Ve République', 'fr').member_titles
 names['13'] = WikiData::Category.new( 'Catégorie:Député de la XIIIe législature de la Ve République', 'fr').member_titles
 names['12'] = WikiData::Category.new( 'Catégorie:Député de la XIIe législature de la Ve République', 'fr').member_titles
