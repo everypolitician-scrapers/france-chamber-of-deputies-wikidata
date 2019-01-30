@@ -19,4 +19,4 @@ sparq = <<EOS
 EOS
 p39s = EveryPolitician::Wikidata.sparql(sparq)
 
-EveryPolitician::Wikidata.scrape_wikidata(ids: p39s | frwiki, batch_size: 250)
+EveryPolitician::Wikidata.scrape_wikidata(ids: p39s | frwiki, batch_size: 100)
