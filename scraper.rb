@@ -11,16 +11,13 @@ names['12'] = WikiData::Category.new( 'Catégorie:Député de la XIIe législatu
 
 wanted = names.values.inject(:|)
 
-# Find all Memberships since the start of the 12th Legislature
-# This will ignore anyone who has a continuous membership from before
-# that, but at the minute it's just a fallback for people missing from
-# the Categories above, so should be Good Enough For Now
+# Find all Memberships since the 12th Legislature
 sparq = <<EOS
   SELECT DISTINCT ?item WHERE {
-    ?item p:P39 ?position_statement .
-    ?position_statement ps:P39 wd:Q3044918 ;
-                        pq:P580 ?start_date .
-    FILTER (?start_date >= "2002-06-19T00:00:00Z"^^xsd:dateTime) .
+    ?item p:P39 ?ps .
+    ?ps ps:P39 wd:Q3044918 ; pq:P580 ?start_date .
+    OPTIONAL { ?ps pq:P582 ?end_date }
+    FILTER(!BOUND(?end_date) || (?end_date >= "2002-06-19T00:00:00Z"^^xsd:dateTime))
   }
 EOS
 p39s = EveryPolitician::Wikidata.sparql(sparq)
